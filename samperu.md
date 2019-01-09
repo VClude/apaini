@@ -17,7 +17,7 @@ to create table, use only raw sql (CREATE TABLE bleh bleh)
 
 ## Content Providers
 Use Custom content providers to share data between different apps, as you can't do that without this.
-the code is fucking long i dont want to write it, ty.
+the code is fucking long i dont want to write it, ty. (Page 6.22)
 
 ## Shared Preferences
 Store a key value data into an xml files usually stored in
@@ -329,5 +329,29 @@ LBS provide information about your device's current location. LBS Get location d
 * Cell Tower Triangulation
 * Public Wi-Fi Hotspots
 
+## Logs
+* `Log.e(String, String)` (error)
+* `Log.w(String, String)` (warning)
+* `Log.i(String, String)` (information)
+* `Log.d(String, String)` (debug)
+* `Log.v(String, String)` (verbose)
+
+## Resource Manager, Notification Manager, Activity Manager
+* Resource Manager : Manage Localized Resources (e.g Strings, Graphics, Layout, etc.)
+* Notif Manager ; Enable Apps to Display Messages in the Notif Bar
+* Activity Manager : Manages activities Local Files
+
+## Building Block of an Android Application
+* **Activity** is a **USER INTERFACE** of an Android Apps
+* **Services** is an app that runs in the background
+* **Content Providers** allow apps to retrieve, modify or share data from another source, but require permission from the content provider.
+* **Broadcast Receivers** is a component that respond to a system event, such as the screen being turned off, low battery, etc.
+
+## Activity States
+* **Runnning** The activity is visible to the user on the screen and user can interact with the activity
+* **Paused** Another activity is visible to the user.
+* **Stopped** The activity is completely obscured by another activity
+
+##
 
 *This rangkuman is only intended for learning, the author didnt authorize nor responsible for those who caught cheating while in exam. Also the author did not responsible for the sins&trade; that you have make for cheating in exam. the author hopes that this rangkuman will help you learn the materi for the exam, thank you.*
