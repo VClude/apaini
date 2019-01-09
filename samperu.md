@@ -129,7 +129,9 @@ startActivity(i);
 ```
 
 ## Activity Phase
-See Activity Lifecycle, pretty much the fucking same.
+* **Running**	Activity Visible, user can interact.
+* **Paused**	Activity overlayed with another activity, Example : modal.
+* **Stopped**	Activity goes on Background, and can be autokilled if android lack of memory.
 
 ## DDMS Perspective
 
