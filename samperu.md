@@ -159,6 +159,9 @@ Command : `adb [-d|-e|-s <phone serial>] <command>`
 
 example : `adb devices`, `adb start-server`, `adb kill-server`
 
+example output adb devices : 
+`List of devices attached`
+`kelud-mi6        devices`
 ## Progress Dialog
 We can display the android progress bar dialog box to display the status of work being done e.g. downloading porn, analyzing status of work etc.
 
