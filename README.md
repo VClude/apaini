@@ -18,7 +18,9 @@ pelajari phase dari activity (running, stopped, destroyed, dst)
 #### pelajari tentang DDMS perspective
 #### pelajari tentang cara akses static files via android.content.res.Resource class, methodnya apa aja, cara pakenya gimana, kegunaannya apa.
 pelajari tentang penggunaan Android Emulator, apa itu ADB Commands, apa itu ADB Device Commands, outputnya bagaimana
+
 #### pelajari tentang ProgressDialog, bagaimana kodenya, outputnya bagaimana, methodnya apa aja, gunanya apa
+
 pelajari tentang penggunaan intent untuk melakukan panggilan telepon, methodnya apa, bagaimana bentuk kode nya
 
 pelajari tentang penggunaan intent untuk melakukan SMS, kodenya bagaimana
@@ -37,23 +39,43 @@ pelajari tentang building block dari andorid app (apa itu activity, service, con
 #### Pelajari tentang custom content provider hal 6.28
 #### Pelajari tools testing Android Apps
 Pelajari isi code AndroidManifest.xml
+
 Pelajari code test case class hal 15.5-15.6
+
 Lifecycle Activity hal 4.5 onCreate dkk
+
 Nama method click event pada view
+
 Pelajari kode making telephony calls hal 12.10
+
 #### Perintah exit linux shell
+
 Pelajari Static Files as Resources hal 7.6
+
 Pelajari Log hal 5.5 Log.e dkk
+
 Pelajari Kode ProgressDialog hal 10.13
+
 Pelajari Kode sending text message hal 12.3
+
 Pelajari Kode receiving message hal 12.8
+
 Pelajari mobile device platform yang proprietary hal 1.17
+
 Pelajari Resource manager, Notification Manager, Activity Manager
+
 Pelajari broadcast receiver hal 8.16
+
 Pelajari kode braodcast event hal 8.19
+
 Pelajari lifecycle ondestroy dan stopSelf
+
 Pelajari mediaplayer class method prepare, release, start, dst
+
 Pelajari UI untuk membuat Tab hal 9.16
+
 Pelajari tentang location based service hal 11.3
+
 Pelajari tentang Dialog subclass hal 10.10
+
 Pelajari tentang DDMS perspective hal 5.9
