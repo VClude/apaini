@@ -22,4 +22,7 @@ with open("copythis.html", "w") as e:
             print("</div>\n")
             e.write("</div>\n")
             konter += 1
+        
+        else
+        e.write(lines)
 
