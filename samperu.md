@@ -371,6 +371,33 @@ import android.test.ITestYourAss;
 public class MainActivityTest extends ITestYourAss<MainActivity> {
 }
 ```
+## SQLiteQueryBuilder Detail
+* note : SQLLiteQueryBuilder is used to GET data, And show it to E.g : tables, listview, etc. not STORE data
+
+* explanation of code
+```
+    SQLiteQueryBuilder builder = new SQLiteQueryBuilder(); //instance creation
+    builder.setTables("YourTableThatWantsToBeShowed");
+    //equivalent as : SELECT * FROM YourTableThatWantsToBeShowed
+
+   String columns[] = new String[] {"column1","column2"};
+   //equivalent as : SELECT column1, column2 FROM YourTableThatWantsToBeShowed
+    cursor c = sqlBuilder.query(DBCon, columns, null, null, null, null);
+    
+```
+*Example show all query
+```
+public Cursor queryAll(Context context, Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
+    SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
+    queryBuilder.setTables(getTableName());
+    
+    Cursor cursor = queryBuilder.query(mDB, projection, selection, selectionArgs, null, null, sortOrder);
+    cursor.setNotificationUri(context.getContentResolver(), uri);
+    return cursor;
+}
+```
+
+*
 ##
 
 *This rangkuman is only intended for learning, the author didnt authorize nor responsible for those who caught cheating while in exam. Also the author did not responsible for the sins&trade; that you have make for cheating in exam. the author hopes that this rangkuman will help you learn the materi for the exam, thank you.*
