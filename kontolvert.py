@@ -15,7 +15,7 @@ with open("copythis.html", "w") as e:
             newlines = lines.replace(r'%', "")
             print("<p>\n" + newlines + "</p>\n")
             e.write("<p>\n" + newlines + "</p>\n")
-        elif re.match(r'\#|$', lines):
+        elif re.match(r'#|$', lines):
             print("</div>\n")
             e.write("</div>\n")
         else:
