@@ -357,18 +357,19 @@ body .syntaxhighlighter .toolbar {
                         <p>
                         example getSystemService()
                         </p>
-                        <code>string name_service = Context.TELEPHONY_SERVICE;
-                        TelephonyManager tele_Manager =
-                        (TelephonyManager)getSystemService(name_service);</code>
+                        <pre class="language-java code-toolbar">
+                            <code class="language-java" data-lang="oac_no_warn">
+string name_service = Context.TELEPHONY_SERVICE;
+TelephonyManager tele_Manager = (TelephonyManager)getSystemService(name_service);</pre></code>
                         <p>
                         example PhoneStateListener
                         </p>
-                        <code>PhoneStateListener callStateListener = new PhoneStateListener()
-                        {
-                        public void onCallStateChanged(int state, String incomingNumber){
-                        {
-                        }
-                        };</code>
+                        <pre class="language-java code-toolbar"><code class="language-java" data-lang="oac_no_warn">
+PhoneStateListener callStateListener = new PhoneStateListener(){
+     public void onCallStateChanged(int state, String incomingNumber){
+     {
+};
+</pre></code>
                         <p>
                         parameter state
                         </p>
@@ -413,10 +414,12 @@ body .syntaxhighlighter .toolbar {
                         <p>
                         Contoh mengambil nomor dari incoming call
                         </p>
-                        <code> String IncomingCall = null;
-                        if (telephonyManager.getCallState() == TelephonyManager.CALL_STATE_RINGING)
-                        incomingCall = telephonyManager.getLine1Number();
-                        </code>
+                        <pre class="language-java code-toolbar"><code class="language-java" data-lang="oac_no_warn">
+ String IncomingCall = null;
+if (telephonyManager.getCallState() == TelephonyManager.CALL_STATE_RINGING){
+incomingCall = telephonyManager.getLine1Number();
+};   
+</code></pre>
                         <p>
                         TelephonyManager class juga dapat Mengakses SIM dan detail network operator, network information, dan detil voicemail
                         </p>
@@ -446,14 +449,27 @@ body .syntaxhighlighter .toolbar {
                         <p>
                         contoh kode:
                         </p>
-                        <code>
-                        String Name_sv = Context.TELEPHONY_SERVICE;
-                        TelephonyManager tel_Manaager = (TelephonyManager)getSystemService(Name_sv);
-                        String kodenegara = tel_Manager.getNetworkCountryIso();
+                        <pre class="language-java code-toolbar"><code class="language-java" data-lang="oac_no_warn">
+String Name_sv = Context.TELEPHONY_SERVICE;
+TelephonyManager tel_Manaager = (TelephonyManager)getSystemService(Name_sv);
+String kodenegara = tel_Manager.getNetworkCountryIso();
                         </code>
+                        </pre>
+                        <br><br><br>
                         </div>
-                        
-        
+                <div class='container' id='and1'>
+                    <h3 class='s-title'>SQLite Show tables</h3>          
+                    <pre class="language-java code-toolbar"><code class="language-java" data-lang="oac_no_warn">
+    ArrayList&lt;String&gt; arrTblNames = new ArrayList&lt;String&gt;();
+         Cursor c = db.rawQuery("SELECT name FROM sqlite_master WHERE type='table'", null);
+
+            if (c.moveToFirst()) {
+                while ( !c.isAfterLast() ) {
+                    arrTblNames.add( c.getString( c.getColumnIndex("name")) );
+                    c.moveToNext();
+                     }
+                }
+                    </code></pre>
                           
         
                           
