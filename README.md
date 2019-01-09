@@ -38,7 +38,7 @@ pelajari tentang building block dari andorid app (apa itu activity, service, con
 #### Pelajari tentang shared preferences hal 7.14 - 7.15
 #### Pelajari tentang custom content provider hal 6.28
 #### Pelajari tools testing Android Apps
-Pelajari isi code AndroidManifest.xml
+#### Pelajari isi code AndroidManifest.xml
 
 Pelajari code test case class hal 15.5-15.6
 

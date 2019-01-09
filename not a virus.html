@@ -394,6 +394,7 @@ based on dark.css by Vladimir Epifanov
 <h2 id="telephony-api-packages-1210">Telephony API Packages (12.10)</h2>
 <pre><code class="language-java">android.telephony.TelephonyManager
 </code></pre>
+
 <h2 id="sqlite-command-to-view-all-tables">SQLite Command to View All Tables</h2>
 <p>inside the SQLite Command Line type :</p>
 <pre><code class="language-java">.tables
@@ -487,6 +488,260 @@ Steps Before :</p>
 <li><code>&lt;receiver&gt;</code> for each subclass of BroadcastReceiver.</li>
 <li><code>&lt;provider&gt;</code> for each subclass of ContentProvider.</li>
 </ul>
+<h2 id="android-manifest-structure-c">Android Manifest Structure Simple</h2>
+<pre><code class="language-xml">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+
+&lt;manifest&gt;
+
+    &lt;uses-permission android:name="android.permission.Example"  /&gt;
+    &lt;permission /&gt;
+    &lt;permission-tree /&gt;
+    &lt;permission-group /&gt;
+    &lt;instrumentation /&gt;
+    &lt;uses-sdk /&gt;
+    &lt;uses-configuration /&gt;  <!-- ##api level 3## -->
+    &lt;uses-feature /&gt;  <!-- ##api level 4## -->
+    &lt;supports-screens /&gt;  <!-- ##api level 4## -->
+    &lt;compatible-screens /&gt;  <!-- ##api level 9## -->
+    &lt;supports-gl-texture /&gt;  <!-- ##api level 11## -->
+
+    &lt;application&gt;
+
+        &lt;activity&gt;
+            &lt;intent-filter&gt;
+                &lt;action /&gt;
+                &lt;category /&gt;
+                &lt;data /&gt;
+            &lt;/intent-filter&gt;
+            &lt;meta-data /&gt;
+        &lt;/activity&gt;
+
+        &lt;activity-alias&gt;
+            &lt;/intent-filter&gt;
+            &lt;meta-data /&gt;
+        &lt;/activity-alias&gt;
+
+        &lt;service&gt;
+            &lt;/intent-filter&gt;
+            &lt;meta-data/&gt;
+        &lt;/service&gt;
+
+        &lt;receiver&gt;
+            &lt;/intent-filter&gt;
+            &lt;meta-data /&gt;
+        &lt;/receiver&gt;
+
+        &lt;provider&gt;
+            &lt;grant-uri-permission /&gt;
+            &lt;meta-data /&gt;
+            &lt;path-permission /&gt;
+        &lt;/provider&gt;
+
+        &lt;uses-library /&gt;
+
+    &lt;/application&gt;
+
+&lt;/manifest&gt;
+</code></pre>
+<h2 id="android-manifest-structure-c">Android Manifest Structure Complete</h2>
+<pre><code class="language-xml">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+
+&lt;manifest&gt;
+
+    &lt;uses-permission android:name="android.permission.Example"  /&gt;
+    &lt;permission android:description="string resource"
+                android:icon="drawable resource"
+                android:label="string resource"
+                android:name="string"
+                android:permissionGroup="string"
+                android:protectionLevel=["normal" | "dangerous" | 
+                                     "signature" | "signatureOrSystem"] /&gt;
+    &lt;permission-tree android:icon="drawable resource"
+                 android:label="string resource" ]
+                 android:name="string" /&gt;
+    &lt;permission-group android:description="string resource"
+                  android:icon="drawable resource"
+                  android:label="string resource"
+                  android:name="string"/&gt;
+    &lt;instrumentation android:functionalTest=["true" | "false"]
+                 android:handleProfiling=["true" | "false"]
+                 android:icon="drawable resource"
+                 android:label="string resource"
+                 android:name="string"
+                 android:targetPackage="string" /&gt;
+    &lt;uses-sdk android:minSdkVersion="integer" 
+          android:targetSdkVersion="integer"
+          android:maxSdkVersion="integer" /&gt;
+    &lt;uses-configuration   android:reqFiveWayNav=["true" | "false"] 
+  android:reqHardKeyboard=["true" | "false"]
+  android:reqKeyboardType=["undefined" | "nokeys" | "qwerty" | "twelvekey"]
+  android:reqNavigation=["undefined" | "nonav" | "dpad" | "trackball" | "wheel"]
+  android:reqTouchScreen=["undefined" | "notouch" | "stylus" | "finger"] /&gt;  <!-- ##api level 3## -->
+    &lt;uses-feature  android:name="string"
+  android:required=["true" | "false"]
+  android:glEsVersion="integer" /&gt;  <!-- ##api level 4## -->
+    &lt;supports-screens android:resizeable=["true"| "false"]
+                  android:smallScreens=["true" | "false"]
+                  android:normalScreens=["true" | "false"]
+                  android:largeScreens=["true" | "false"]
+                  android:xlargeScreens=["true" | "false"]
+                  android:anyDensity=["true" | "false"]
+                  android:requiresSmallestWidthDp="integer"
+                  android:compatibleWidthLimitDp="integer"
+                  android:largestWidthLimitDp="integer" /&gt;  <!-- ##api level 4## -->
+    &lt;compatible-screens <screen android:screenSize=["small" | "normal" | "large" | "xlarge"]
+            android:screenDensity=["ldpi" | "mdpi" | "hdpi" | "xhdpi"] />
+    ... /&gt;  <!-- ##api level 9## -->
+    &lt;supports-gl-texture android:name="GL_AMD_compressed_3DC_texture" /&gt;  <!-- ##api level 11## -->
+
+    &lt;applicationandroid:allowTaskReparenting=["true" | "false"]
+             android:backupAgent="string"
+             android:debuggable=["true" | "false"]
+             android:description="string resource"
+             android:enabled=["true" | "false"]
+             android:hasCode=["true" | "false"]
+             android:hardwareAccelerated=["true" | "false"]
+             android:icon="drawable resource"
+             android:killAfterRestore=["true" | "false"]
+             android:largeHeap=["true" | "false"]
+             android:label="string resource"
+             android:logo="drawable resource"
+             android:manageSpaceActivity="string"
+             android:name="string"
+             android:permission="string"
+             android:persistent=["true" | "false"]
+             android:process="string"
+             android:restoreAnyVersion=["true" | "false"]
+             android:supportsRtl=["true" | "false"]
+             android:taskAffinity="string"
+             android:theme="resource or theme"
+             android:uiOptions=["none" | "splitActionBarWhenNarrow"] >
+&gt;
+
+        &lt;activity android:allowTaskReparenting=["true" | "false"]
+          android:alwaysRetainTaskState=["true" | "false"]
+          android:clearTaskOnLaunch=["true" | "false"]
+          android:configChanges=["mcc", "mnc", "locale",
+                                 "touchscreen", "keyboard", "keyboardHidden",
+                                 "navigation", "screenLayout", "fontScale", "uiMode",
+                                 "orientation", "screenSize", "smallestScreenSize"]
+          android:enabled=["true" | "false"]
+          android:excludeFromRecents=["true" | "false"]
+          android:exported=["true" | "false"]
+          android:finishOnTaskLaunch=["true" | "false"]
+          android:hardwareAccelerated=["true" | "false"]
+          android:icon="drawable resource"
+          android:label="string resource"
+          android:launchMode=["multiple" | "singleTop" |
+                              "singleTask" | "singleInstance"]
+          android:multiprocess=["true" | "false"]
+          android:name="string"
+          android:noHistory=["true" | "false"]  
+          android:parentActivityName="string" 
+          android:permission="string"
+          android:process="string"
+          android:screenOrientation=["unspecified" | "user" | "behind" |
+                                     "landscape" | "portrait" |
+                                     "reverseLandscape" | "reversePortrait" |
+                                     "sensorLandscape" | "sensorPortrait" |
+                                     "sensor" | "fullSensor" | "nosensor"]
+          android:stateNotNeeded=["true" | "false"]
+          android:taskAffinity="string"
+          android:theme="resource or theme"
+          android:uiOptions=["none" | "splitActionBarWhenNarrow"]
+          android:windowSoftInputMode=["stateUnspecified",
+                                       "stateUnchanged", "stateHidden",
+                                       "stateAlwaysHidden", "stateVisible",
+                                       "stateAlwaysVisible", "adjustUnspecified",
+                                       "adjustResize", "adjustPan"] &gt;
+            &lt;intent-filter android:icon="drawable resource"
+               android:label="string resource"
+               android:priority="integer" &gt;
+                &lt;action android:name="string" /&gt;
+                &lt;category android:name="string" /&gt;
+                &lt;data android:host="string"
+      android:mimeType="string"
+      android:path="string"
+      android:pathPattern="string"
+      android:pathPrefix="string"
+      android:port="string"
+      android:scheme="string"/&gt;
+            &lt;/intent-filter&gt;
+            &lt;meta-data android:name="string"
+           android:resource="resource specification"
+           android:value="string"/&gt;
+        &lt;/activity&gt;
+
+        &lt;activity-alias android:enabled=["true" | "false"]
+                android:exported=["true" | "false"]
+                android:icon="drawable resource"
+                android:label="string resource"
+                android:name="string"
+                android:permission="string"
+                android:targetActivity="string"&gt;
+            &lt;/intent-filter&gt;
+            &lt;meta-data /&gt;
+        &lt;/activity-alias&gt;
+
+        &lt;service android:enabled=["true" | "false"]
+         android:exported=["true" | "false"]
+         android:icon="drawable resource"
+         android:isolatedProcess=["true" | "false"]
+         android:label="string resource"
+         android:name="string"
+         android:permission="string"
+         android:process="string"&gt;
+            &lt;/intent-filter&gt;
+            &lt;meta-data/&gt;
+        &lt;/service&gt;
+
+        &lt;receiver android:enabled=["true" | "false"]
+          android:exported=["true" | "false"]
+          android:icon="drawable resource"
+          android:label="string resource"
+          android:name="string"
+          android:permission="string"
+          android:process="string"&gt;
+            &lt;/intent-filter&gt;
+            &lt;meta-data /&gt;
+        &lt;/receiver&gt;
+
+        &lt;provider android:authorities="list"
+          android:enabled=["true" | "false"]
+          android:exported=["true" | "false"]
+          android:grantUriPermissions=["true" | "false"]
+          android:icon="drawable resource"
+          android:initOrder="integer"
+          android:label="string resource"
+          android:multiprocess=["true" | "false"]
+          android:name="string"
+          android:permission="string"
+          android:process="string"
+          android:readPermission="string"
+          android:syncable=["true" | "false"]
+          android:writePermission="string"&gt;
+            &lt;grant-uri-permission android:path="string"
+                      android:pathPattern="string"
+                      android:pathPrefix="string"/&gt;
+            &lt;meta-data /&gt;
+            &lt;path-permission android:path="string"
+                 android:pathPrefix="string"
+                 android:pathPattern="string"
+                 android:permission="string"
+                 android:readPermission="string"
+                 android:writePermission="string"/&gt;
+        &lt;/provider&gt;
+
+        &lt;uses-library  android:name="string"
+            android:required=["true" | "false"] /&gt;
+
+    &lt;/application&gt;
+
+&lt;/manifest&gt;
+</code></pre>
+
 <h2 id="activity-lifecycle">Activity Lifecycle</h2>
 <ul>
 <li><strong>onCreate</strong>	called when activity is first created.</li>
