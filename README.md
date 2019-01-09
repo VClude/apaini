@@ -2,7 +2,7 @@
 Android QT Cheatsheet
 auto conversion with python for contents
 
-#Kisi Kisi Tracking JNE
+# Kisi Kisi Tracking JNE
 ### use h4 for mark as done
 #### pelajari package yang digunakan untuk menggunakan Android Telephony API
 #### pelajari command SQLite untuk melihat seluruh tabel yang ada
@@ -20,7 +20,9 @@ pelajari phase dari activity (running, stopped, destroyed, dst)
 pelajari tentang penggunaan Android Emulator, apa itu ADB Commands, apa itu ADB Device Commands, outputnya bagaimana
 #### pelajari tentang ProgressDialog, bagaimana kodenya, outputnya bagaimana, methodnya apa aja, gunanya apa
 pelajari tentang penggunaan intent untuk melakukan panggilan telepon, methodnya apa, bagaimana bentuk kode nya
+
 pelajari tentang penggunaan intent untuk melakukan SMS, kodenya bagaimana
+
 pelajari tentang building block dari andorid app (apa itu activity, service, content providers, fragment, dst)
 #### apa yang dimaksud dengan ordered broadcast, apa saja opsinya, apa kegunaannya
 #### pelajari tentang Broadcast Receiver, kodenya bagaimana
