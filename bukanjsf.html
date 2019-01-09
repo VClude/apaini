@@ -290,17 +290,176 @@ body .syntaxhighlighter .toolbar {
                 <label class="accordion-header c-hand" for="accordion-othsect"><h2>Android  <i class="icon icon-arrow-right mr-1"></i></h2></label>
                
                 <div class="accordion-body">
-                        
+                    
                           
-                          <div class="container" id="and1">
-                                <h3 class="s-title">Stuff goes here</h3>
-                          </div>
+                    <div class='container' id='and1'>
+                        <h3 class='s-title'>android telephony
+                        </h3>
+                        <h3>making telephonic calls</h3>
+                        <p>
+                        Attribut
+                        </p>
+                        <ul>
+                        <li>
+                            ACTION_CALL (butuh CALL_PHONE permission)
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>
+                            ACTION_DIAL
+                        </li>
+                        </ul>
+                        <p>
+                        contoh
+                        </p>
+                        <ul>
+                        <li>
+                            Intent intent = new Intent(Intent.ACTION_DIAL,Uri.parse(tel:"0878754425"));
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>
+                            startActivity(intent);
+                        </li>
+                        </ul>
+                        <h3>Monitoring Phone state</h3>
+                        <p>
+                        fungsi :
+                        </p>
+                        <ul>
+                        <li>
+                            detect and react to the incoming and outgoing phone calls
+                        </li>
+                        </ul>
+                        <p>
+                        how to access
+                        </p>
+                        <ul>
+                        <li>
+                            1. import android.telephony.TelephonyManagerclass
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>
+                            2. (getSystemService)
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>
+                            3. butuh READ_PHONE_STATE permission di AndroidManifest.xml
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>
+                            4. butuh PhoneStateListener dan override onCallStateChanged()
+                        </li>
+                        </ul>
+                        <p>
+                        example getSystemService()
+                        </p>
+                        <code>string name_service = Context.TELEPHONY_SERVICE;
+                        TelephonyManager tele_Manager =
+                        (TelephonyManager)getSystemService(name_service);</code>
+                        <p>
+                        example PhoneStateListener
+                        </p>
+                        <code>PhoneStateListener callStateListener = new PhoneStateListener()
+                        {
+                        public void onCallStateChanged(int state, String incomingNumber){
+                        {
+                        }
+                        };</code>
+                        <p>
+                        parameter state
+                        </p>
+                        <ul>
+                        <li>
+                            TelephonyManager.CALL_STATE_IDLE
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>
+                            TelephonyManager.CALL_STATE_RINGING
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>
+                            TelephonyManager.CALL_STATE_OFFHOOK
+                        </li>
+                        </ul>
+                        <code>
+                        tele_Manager.listen(callStateListener,
+                        PhoneStateListener.LISTEN_CALL_STATE);
+                        </code>
+                        <p>
+                        some other events that you can listen to are:
+                        </p>
+                        <ul>
+                        <li>
+                            LISTEN_CALL_FORWARDING_INDICATOR
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>
+                            LISTEN_CELL_LOCATION
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>
+                            LISTEN_SERVICE_STATE
+                        </li>
+                        </ul>
+                        <h3>Accessing phone Property</h3>
+                        <p>
+                        Contoh mengambil nomor dari incoming call
+                        </p>
+                        <code> String IncomingCall = null;
+                        if (telephonyManager.getCallState() == TelephonyManager.CALL_STATE_RINGING)
+                        incomingCall = telephonyManager.getLine1Number();
+                        </code>
+                        <p>
+                        TelephonyManager class juga dapat Mengakses SIM dan detail network operator, network information, dan detil voicemail
+                        </p>
+                        <p>
+                        Methods dalam TelephonyManager class:
+                        </p>
+                        <ul>
+                        <li>
+                            getNetworkCountryIso() | +622, +628
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>
+                            getNetworkOperator() | Return numeric
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>
+                            getNetworkOperatorName() | XL,Telkomsel
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>
+                            getNetworkType() | seperti 4G, 3G, dalam bentuk kode
+                        </li>
+                        </ul>
+                        <p>
+                        contoh kode:
+                        </p>
+                        <code>
+                        String Name_sv = Context.TELEPHONY_SERVICE;
+                        TelephonyManager tel_Manaager = (TelephonyManager)getSystemService(Name_sv);
+                        String kodenegara = tel_Manager.getNetworkCountryIso();
+                        </code>
+                        </div>
+                        
         
                           
         
                           
         
                 </div>    
+                <br><br><br><br><br>
             </div> 
         </div>
       </div>
