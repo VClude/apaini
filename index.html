@@ -765,8 +765,12 @@ startActivity(intent);
 <pre><code class="language-java">Intent i = new Intent(getApplicationContext(), ActivityTwo.class);  
 startActivity(i);  
 </code></pre>
-<h2 id="activity-phase">Activity Phase</h2>
-<p>See Activity Lifecycle, pretty much the fucking same.</p>
+<h2 id="activity-phase">Activity Phase/State</h2>
+<ol>
+    <li><strong>Running</strong>: Activity Visible, user can interact</li>
+    <li><strong>Paused</strong>: Activity overlayed with another activity, Example : modal</li>
+    <li><strong>Stopped</strong>: Activity goes on Background, and can be autokilled if android lack of memory</li>
+</ol>
 <h2 id="ddms-perspective">DDMS Perspective</h2>
 <p>DDMS stands for Dalvik Debug Monitor Server. It gives the wide array of debugging features:</p>
 <ol>

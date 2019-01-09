@@ -14,7 +14,7 @@ apa itu custom content provider di dalam aplikasi android, bagaimana kodenya?
 #### pelajari struktur dari android manifest (permission nya bagaimana, code nya bagaimana)
 #### pelajari life cycle dari activity (onresume, oncreate, onstart, dst)
 #### pelajari tentang intent, bagaimana behaviour nya (implicit & explicit itu gimana)
-pelajari phase dari activity (running, stopped, destroyed, dst)
+#### pelajari phase dari activity (running, stopped, destroyed, dst)
 #### pelajari tentang DDMS perspective
 #### pelajari tentang cara akses static files via android.content.res.Resource class, methodnya apa aja, cara pakenya gimana, kegunaannya apa.
 pelajari tentang penggunaan Android Emulator, apa itu ADB Commands, apa itu ADB Device Commands, outputnya bagaimana
