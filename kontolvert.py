@@ -7,22 +7,17 @@ with open("copythis.html", "w") as e:
             newlines = lines.replace(r'#', "")
             print("<div class='container' id='and" + str(konter) + "'>\n<h3 class='s-title'>"+ newlines + "</h3>\n")
             e.write("<div class='container' id='and" + str(konter) + "'>\n<h3 class='s-title'>"+ newlines + "</h3>\n")
-            konter += 1
         elif re.match(r'\s', lines):
             newlines = lines.replace(r'\s', "")
             print("<li>\n" + newlines + "</li>\n")
             e.write("<ul>\n<li>\n" + newlines + "</li>\n</ul>\n")
-            konter += 1
         elif re.match(r'\%', lines):
             newlines = lines.replace(r'%', "")
             print("<p>\n" + newlines + "</p>\n")
             e.write("<p>\n" + newlines + "</p>\n")
-            konter += 1
-        elif (r'#|$', lines):
+        elif re.match(r'\#|$', lines):
             print("</div>\n")
             e.write("</div>\n")
-            konter += 1
-        
-        else
-        e.write(lines)
-
+        else:
+            print(lines)
+            e.write(lines)
