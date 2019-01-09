@@ -160,7 +160,8 @@ Command : `adb [-d|-e|-s <phone serial>] <command>`
 example : `adb devices`, `adb start-server`, `adb kill-server`
 
 example output adb devices : 
-```List of devices attached
+```
+List of devices attached
 kelud-mi6        devices
 ```
 ## Progress Dialog
