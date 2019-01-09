@@ -359,6 +359,18 @@ LBS provide information about your device's current location. LBS Get location d
 * **Paused** Another activity is visible to the user.
 * **Stopped** The activity is completely obscured by another activity
 
+## Test Case Class Detail
+* You need to extend the testing junit class with involved Activities in order to create test case class, also import android.test
+* NameClass: MainActivityTest
+* Involved : MainActivity
+* Using TestClass : ITestYourAss
+```java
+package com.aweawe.testing;
+import com.awewe;
+import android.test.ITestYourAss;
+public class MainActivityTest extends ITestYourAss<MainActivity> {
+}
+```
 ##
 
 *This rangkuman is only intended for learning, the author didnt authorize nor responsible for those who caught cheating while in exam. Also the author did not responsible for the sins&trade; that you have make for cheating in exam. the author hopes that this rangkuman will help you learn the materi for the exam, thank you.*
