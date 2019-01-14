@@ -15,4 +15,12 @@
 
 ## Type of Testing
 Test Strategies :
-* **Blackbox Testing** Test overall software functionality
+* **Blackbox Testing** Test overall software functionality, does not cover each statement.
+* **Whitebox Testing** Test every statement and condition given in the code
+
+Once strategies are decided, testing can be done at various level :
+* **UNIT TESTING** is a level of software testing where individual units/ components of a software are tested. The purpose is to validate that each unit of the software performs as designed.
+* **Integration testing** (sometimes called integration and testing, abbreviated I&T) is the phase in software testing in which individual software modules are combined and tested as a group(sometimes called integration and testing, abbreviated I&T) is the phase in software testing in which individual software modules are combined and tested as a group.
+* **System testing** is performed on a complete, integrated system. It allows checking system's compliance as per the requirements. It tests the overall interaction of components. It involves load, performance, reliability and security testing.
+* **Acceptance testing** is a test conducted to find if the requirements of a specification or contract are met as per its delivery. Acceptance testing is basically done by the user or customer. However, other stockholders can be involved in this process.
+* **Regression testing** is the process of testing changes to computer programs to make sure that the older programming still works with the new changes.
