@@ -53,10 +53,12 @@ class ServiceStub implements Service {
 |exampletestpkg|3|0|0|0|100%|0.01|
 ## exampletestpkg
 |Class|Tests|Errors|Failures|Skipped|Success Rate|Time|
-|--- |--- |--- |--- |--- |--- |
+|--- |--- |--- |--- |--- |--- |--- |
 |exampleclass|3|0|0|0|100%|0.01|
 ## Test Class
 ### exampleclass
+| | |
+|--- |--- |
 |test1func|0.001|
 |test2func|0.001|
 |test3func|0.001|
