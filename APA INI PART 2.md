@@ -47,16 +47,16 @@ class ServiceStub implements Service {
 |Tests|Errors|Failures|Skipped|Success Rate|Time|
 |--- |--- |--- |--- |--- |--- |
 |Total Test functions|Error in function|Failures in Function (Assert not true)|percentage of total testfunc-failfunc/testfunc|time elapsed|
-**Package List**
-|Package|Tests|Errors|Failures| Skipped|Success Rate|Time|
+## Package List
+|Package|Tests|Errors|Failures|Skipped|Success Rate|Time|
 |--- |--- |--- |--- |--- |--- |
 |exampletestpkg|3|0|0|0|100%|0.01|
-**exampletestpkg**
-|Class|Tests|Errors|Failures| Skipped|Success Rate|Time|
+## exampletestpkg
+|Class|Tests|Errors|Failures|Skipped|Success Rate|Time|
 |--- |--- |--- |--- |--- |--- |
 |exampleclass|3|0|0|0|100%|0.01|
-**Test Cases**
-**exampleclass**
+## Test Class
+### exampleclass
 |test1func|0.001|
 |test2func|0.001|
 |test3func|0.001|
