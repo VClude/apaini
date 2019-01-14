@@ -24,3 +24,40 @@ Once strategies are decided, testing can be done at various level :
 * **System testing** is performed on a complete, integrated system. It allows checking system's compliance as per the requirements. It tests the overall interaction of components. It involves load, performance, reliability and security testing.
 * **Acceptance testing** is a test conducted to find if the requirements of a specification or contract are met as per its delivery. Acceptance testing is basically done by the user or customer. However, other stockholders can be involved in this process.
 * **Regression testing** is the process of testing changes to computer programs to make sure that the older programming still works with the new changes.
+
+## Stub
+A stub is a controllable replacement for an existing dependency (or collaborator) in the system. By using a stub, you can test your code without dealing with the dependency directly.
+
+**example stub code**
+```java
+interface Service {
+    String doSomething();
+}
+
+class ServiceStub implements Service {
+    public String doSomething(){
+        return "my stubbed return";
+    }
+}
+```
+## JUnit Report
+* **Tools** : Maven
+* **Plugin** : Surefire
+**Summary**
+| Tests | Errors | Failures | Skipped | Success Rate | Time |
+|---|---|---|---|---|---|
+| Total Test functions | Error in function | Failures in Function (Assert not true) | percentage of total testfunc-failfunc/testfunc| time elapsed |
+**Package List**
+| Package | Tests | Errors | Failures | Skipped | Success Rate | Time |
+|---|---|---|---|---|---|---|
+| exampletestpkg | 3 | 0 | 0 | 0 | 100% | 0.01 |
+**exampletestpkg**
+| Class | Tests | Errors | Failures | Skipped | Success Rate | Time |
+|---|---|---|---|---|---|---|
+| exampleclass | 3 | 0 | 0 | 0 | 100% | 0.01 |
+**Test Cases**
+**exampleclass**
+| test1func | 0.001 |
+| test2func | 0.001 |
+| test3func | 0.001 |
+
