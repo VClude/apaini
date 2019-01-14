@@ -43,7 +43,7 @@ class ServiceStub implements Service {
 ## JUnit Report
 * **Tools** : Maven
 * **Plugin** : Surefire
-**Summary**
+## Summary
 |Tests|Errors|Failures|Skipped|Success Rate|Time|
 |--- |--- |--- |--- |--- |--- |
 |Total Test functions|Error in function|Failures in Function (Assert not true)|percentage of total testfunc-failfunc/testfunc|time elapsed|
