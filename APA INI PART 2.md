@@ -89,6 +89,29 @@ class ServiceStub implements Service {
     }
 }
 ```
+## JWebUnit
+```java
+import static net.sourceforge.jwebunit.junit.JWebUnit.*;
+
+public class ExampleWebTestCase {
+	
+    @Before
+    public void prepare() {
+        setBaseUrl("http://localhost:8080/test");
+    }
+
+    @Test
+    public void test1() {
+        beginAt("home.xhtml"); //Open the browser on http://localhost:8080/test/home.xhtml
+        clickLink("login");
+        assertTitleEquals("Login");
+        setTextField("username", "test");
+        setTextField("password", "test123");
+        submit();
+        assertTitleEquals("Welcome, test!");
+    }
+}
+```
 ## JUnit Report
 * **Tools** : Maven
 * **Plugin** : Surefire
