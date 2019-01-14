@@ -1,4 +1,4 @@
-﻿# APA INI PART 2
+# APA INI PART 2
 
 ## JUnit Annotation
 * `@Test` annotation specifies that method is the test method.
@@ -49,7 +49,7 @@ To remove an element, make sure the element is selected, right-click on the elem
     * **Consistency** A transaction either creates a new and valid state of data, or, if any failure occurs, returns all data to its state before the transaction was started.
     * **Isolation.** A transaction in process and not yet committed must remain isolated from any other transaction.
     * **Durability.** Committed data is saved by the system such that, even in the event of a failure and system restart, the data is available in its correct state.
-    
+
 * **Data Integrity** Testing a database for its data integrity refers to the verification of a change in one table being reflected in another, as desired.
 
 ## Interpreting CoCo Results
@@ -113,6 +113,34 @@ Man there is still a fuckton of method in the books that are not covered killmys
 |assertTrue("message",A)|Asserts that A condition is evaluated to true|
 |assertNotNull("message",A)|Asserts that A isn?t null|
 
+
+## Mock framework, EasyMock,
+EasyMock : `org.easymock`
+Mockito  : `org.mockito`
+
+### EasyMock
+#### Behavior
+|method|desc|
+|--- |--- |
+|`createMock(Class<T> toMock)`|create normal mock object, all expected methods being unit tested must be called with specified arguments in any order. call unexpected methods caused to fails.|
+|`createNiceMock(Class<T> toMock)`|create nice mock object, all expected methods being unit tested must be called with specified arguments in any order. call unexpected methods NOT caused to fails.|
+|`createStrictMock(Class<T> toMock)`|create strict mock object, all expected methods being unit tested must be called with expected arguments in specified order. call unexpected methods caused to fails.|
+## CSV Format
+
+## cron syntax
+|syntax|desc|
+|--- |--- |
+|\*|any value|
+|,|value list separator|
+|-|range of values|
+|/|step values|
+|@yearly|(non-standard)|
+|@annually|(non-standard)|
+|@monthly|(non-standard)|
+|@weekly|(non-standard)|
+|@daily|(non-standard)|
+|@hourly|(non-standard)|
+|@reboot|(non-standard)|
 ## @runwith parameterized `org.junit.runners.Parameterized.Parameters;`
 Parameterized tests allow a developer to run the same test over and over again using different values. 
 ### step
