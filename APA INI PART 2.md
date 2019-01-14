@@ -12,6 +12,17 @@
 * `@After` annotation specifies that method will be invoked after each test.
 
 * `@AfterClass` annotation specifies that method will be invoked only once, after finishing all the tests.
+## Execution order JUnit
+
+* Method annotated with `@BeforeClass`
+* Method annotated with `@Before`
+* First method annotated with `@Test` i.e. `test1()`.
+* Method annotated with `@After`
+* Method annotated with `@Before`
+* Second method annotated with `@Test` i.e. `test2()`.
+* Method annotated with `@After`
+* Method annotated with `@AfterClass`
+
 
 ## Type of Testing
 Test Strategies :
@@ -24,6 +35,44 @@ Once strategies are decided, testing can be done at various level :
 * **System testing** is performed on a complete, integrated system. It allows checking system's compliance as per the requirements. It tests the overall interaction of components. It involves load, performance, reliability and security testing.
 * **Acceptance testing** is a test conducted to find if the requirements of a specification or contract are met as per its delivery. Acceptance testing is basically done by the user or customer. However, other stockholders can be involved in this process.
 * **Regression testing** is the process of testing changes to computer programs to make sure that the older programming still works with the new changes.
+
+## @runwith parameterized `org.junit.runners.Parameterized.Parameters;`
+Parameterized tests allow a developer to run the same test over and over again using different values. 
+### step
+* Annotate test class with `@RunWith(Parameterized.class)`.
+
+* Create a public static method annotated with `@Parameters` that returns a Collection of Objects (as Array) as test data set.
+
+* Create a public constructor that takes in what is equivalent to one "row" of test data.
+
+* Create an instance variable for each "column" of test data.
+
+* Create your test case(s) using the instance variables as the source of the test data.
+### Example
+```java
+...
+@RunWith(Parameterized.class)
+public class CalcTest {
+    private int a,b,expected;
+    public CalculatorTest(int a, int b, int expected){
+        this.a=a;
+        this.b=b;
+        this.expected=expected;
+    }
+    ...
+    
+    @Test
+    public void testAdd(){
+    Calculator instance = new Calculator();
+    int actual = instance.add(a,b);
+    Assert.assertEquals(expected, actual);
+    }
+@Parameters
+    public static Collection<Integer[]> getParameters(){
+    Integer [][]inputArr;
+    
+    ...
+```
 
 ## Stub
 A stub is a controllable replacement for an existing dependency (or collaborator) in the system. By using a stub, you can test your code without dealing with the dependency directly.
@@ -47,19 +96,19 @@ class ServiceStub implements Service {
 |Tests|Errors|Failures|Skipped|Success Rate|Time|
 |--- |--- |--- |--- |--- |--- |
 |Total Test functions|Error in function|Failures in Function (Assert not true)|skipped|percentage of total testfunc-failfunc/testfunc|time elapsed|
-## Package List
+### Package List
 |Package|Tests|Errors|Failures|Skipped|Success Rate|Time|
 |--- |--- |--- |--- |--- |--- |--- |
 |exampletestpkg|3|0|0|0|100%|0.01|
-## exampletestpkg
+### exampletestpkg
 |Class|Tests|Errors|Failures|Skipped|Success Rate|Time|
 |--- |--- |--- |--- |--- |--- |--- |
 |exampleclass|3|0|0|0|100%|0.01|
-## Test Class
-### exampleclass
+### Test Class
+#### exampleclass
 | | |
 |--- |--- |
 |test1func|0.001|
 |test2func|0.001|
 |test3func|0.001|
-
+## Common issue
