@@ -1,2 +1,2 @@
 # QT Cheatsheet
-Android QT Cheatsheet
+Junit QT Cheatsheet
