@@ -117,8 +117,8 @@ EasyMock : `org.easymock`
 Mockito  : `org.mockito`
 
 ### EasyMock
-Behavior
-|Method|desc|
+####Behavior
+|method|desc|
 |--- |--- |
 |`createMock(Class<T> toMock)`|create normal mock object, all expected methods being unit tested must be called with specified arguments in any order. call unexpected methods caused to fails.|
 |`createNiceMock(Class<T> toMock)`|create nice mock object, all expected methods being unit tested must be called with specified arguments in any order. call unexpected methods NOT caused to fails.|
