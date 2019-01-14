@@ -12,6 +12,17 @@
 * `@After` annotation specifies that method will be invoked after each test.
 
 * `@AfterClass` annotation specifies that method will be invoked only once, after finishing all the tests.
+## Execution order JUnit
+
+* Method annotated with `@BeforeClass`
+* Method annotated with `@Before`
+* First method annotated with `@Test` i.e. `test1()`.
+* Method annotated with `@After`
+* Method annotated with `@Before`
+* Second method annotated with `@Test` i.e. `test2()`.
+* Method annotated with `@After`
+* Method annotated with `@AfterClass`
+
 
 ## Type of Testing
 Test Strategies :
@@ -24,95 +35,20 @@ Once strategies are decided, testing can be done at various level :
 * **System testing** is performed on a complete, integrated system. It allows checking system's compliance as per the requirements. It tests the overall interaction of components. It involves load, performance, reliability and security testing.
 * **Acceptance testing** is a test conducted to find if the requirements of a specification or contract are met as per its delivery. Acceptance testing is basically done by the user or customer. However, other stockholders can be involved in this process.
 * **Regression testing** is the process of testing changes to computer programs to make sure that the older programming still works with the new changes.
-* **Performance Testing** is a type of software testing and part of performance engineering that is performed to check some of the quality attributes of software like Stability, reliability, availability.
-
-## CI Testing Tools
-**HUDSON and JENKINS**
-
-## JMeter TestPlan
-
-A test plan describes a series of steps JMeter will execute when run. A complete test plan will consist of one or more Thread Groups, logic controllers, sample generating controllers, listeners, timers, assertions, and configuration elements.
-
-You can define a sample set of users inside a test plan using a **thread group** element.
-
-Adding elements to a test plan can be done by right-clicking on an element in the tree, and choosing a new element from the `add` list. Alternatively, elements can be loaded from file and added by choosing the `merge` or `open` option.
-
-To remove an element, make sure the element is selected, right-click on the element, and choose the `remove` option
-
-## Data Driven Testing Benefits
-* **Data Mapping** verfies whether a ui component is mapped with the correct columns of the table in database
-* **ACID Properties Validation** Testing a Database for its ACID property makes the database stable and reliable
-
-
-     ACID Properties and their Aspect :
-    * **Atomicity** guarantees that each transaction is treated as a single "unit", which either succeeds completely, or fails completely.
-    * **Consistency** A transaction either creates a new and valid state of data, or, if any failure occurs, returns all data to its state before the transaction was started.
-    * **Isolation.** A transaction in process and not yet committed must remain isolated from any other transaction.
-    * **Durability.** Committed data is saved by the system such that, even in the event of a failure and system restart, the data is available in its correct state.
-    
-* **Data Integrity** Testing a database for its data integrity refers to the verification of a change in one table being reflected in another, as desired.
-
-## Interpreting CoCo Results
-* **Green** colors, means the code area is completely covered by the test cases
-* **Yellow** colors, means  the code area is partially covered by the test cases
-* **Red** colors, means  the code area is left uncovered by the test cases
-
-## Importing JWebUnit in Maven Project
-```xml
-<dependency>
-    <groupId>net.sourceforge.jwebunit</groupId>
-    <artifactId>jwebunit-htmlunit-plugin</artifactId>
-    <version>3.2</version>
-    <scope>test</scope>
-</dependency>
-```
-
-## DatabaseOperation Class Method
-
-|Operation|Description|
+## cron syntax
+|syntax|desc|
 |--- |--- |
-|DatabaseOperation.UPDATE|This operation updates the database from the dataset contents. This operation assumes that table data already exists in the target database and fails if this is not the case.|
-|DatabaseOperation.INSERT|This operation inserts the dataset contents into the database. This operation assumes that table data does not exist in the target database and fails if this is not the case. To prevent problems with foreign keys, tables must be sequenced appropriately in the dataset.|
-|DatabaseOperation.DELETE|This operation deletes only the dataset contents from the database. This operation does not delete the entire table contents but only data that are present in the dataset.|
-|DatabaseOperation.DELETE_ALL|Deletes all rows of tables present in the specified dataset. If the dataset does not contains a particular table, but that table exists in the database, the database table is not affected. Table are truncated in reverse sequence.|
-|DatabaseOperation.TRUNCATE_TABLE|Truncate tables present in the specified dataset. If the dataset does not contains a particular table, but that table exists in the database, the database table is not affected. Table are truncated in reverse sequence.|
-|DatabaseOperation.REFRESH|This operation literally refreshes dataset contents into the target database. This means that data of existing rows are updated and non-existing row get inserted. Any rows which exist in the database but not in dataset stay unaffected. This approach is more appropriate for tests that assume other data may exist in the database. if they are correctly written, tests using this strategy can even be performed on a populated database like a copy of a production database.|
-|DatabaseOperation.CLEAN_INSERT|This composite operation performs a DELETE_ALL operation followed by an INSERT operation. This is the safest approach to ensure that the database is in a known state. This is appropriate for tests that require the database to only contain a specific set of data.|
-|DatabaseOperation.NONE|Empty operation that does absolutely nothing.|
-
-## Parameterized Test Annotation
-Create a public static method annotated with `@Parameters` annotation that returns a collection of object (e.g Array) and for the **TEST** classes annotate the class with `@RunWith(Parameterized.Class)`. Import the following classes to use it.
-```java
-import org.junit.runner.RunWith;
-import org.junit.runner.Parameterized;
-```
-
-## Code Coverage
-* Statement Coverage, checks the execution of various statements.
-* Function Coverage, checks whether test invoke each function.
-* Condition, Checks the outcome of condition (e.g `if` clause, require the condition to be true and false so, `else` block are executed)
-* Loop Coverage, ensure a loop was executed for atleast once
-
-## STLC Phases
-* Requirement Analysis
-* Test Planning
-* Test case development
-* Test Environment setup
-* Test Execution
-* Test Cycle closure
-
-## JWebUnit most used methods
-
-Man there is still a fuckton of method in the books that are not covered killmyself.
-
-|Assert Method|What's It Used For|
-|--- |--- |
-|assertArrayEquals("message",A,B)|Asserts the equality of the A and B arrays|
-|assertEquals("message",A,B)|Asserts the equality of objects A and B.This assert will actually invokes the equals() method on the first object against second.|
-|assertSame("message",A,B)|Asserts that the A and B objects have the same value.|
-|assertTrue("message",A)|Asserts that A condition is evaluated to true|
-|assertNotNull("message",A)|Asserts that A isn?t null|
-
+|\*|any value|
+|,|value list separator|
+|-|range of values|
+|/|step values|
+|@yearly|(non-standard)|
+|@annually|(non-standard)|
+|@monthly|(non-standard)|
+|@weekly|(non-standard)|
+|@daily|(non-standard)|
+|@hourly|(non-standard)|
+|@reboot|(non-standard)|
 ## @runwith parameterized `org.junit.runners.Parameterized.Parameters;`
 Parameterized tests allow a developer to run the same test over and over again using different values. 
 ### step
@@ -189,6 +125,26 @@ public class ExampleWebTestCase {
     }
 }
 ```
+## IDataSet `org.dbunit.dataset.IDataSet`
+* `getDataSet()` : generate data from various source to IDataSet Object
+* `FlatXMLDataSetBuilder()` : build data from xml format
+example xml format
+```xml
+<?xml version='1.0' encoding='UTF-*'?>
+<dataset>
+	<studentinfo StudentID="001" StudentName="awe"/>
+</dataset>
+```
+example test via db
+```java
+public void insertData(URL dataSetUrl) throws Exception {
+    System.out.println("Insert test data.");
+    final IDataSet dataSet = loadDataSet(dataSetUrl);
+    final DatabaseConnection connection = new DatabaseConnection(
+            getDBconnection());
+    DatabaseOperation.INSERT.execute(connection, dataSet);
+}
+```
 ## JUnit Report
 * **Tools** : Maven
 * **Plugin** : Surefire
@@ -212,4 +168,3 @@ public class ExampleWebTestCase {
 |test2func|0.001|
 |test3func|0.001|
 ## Common issue
-
